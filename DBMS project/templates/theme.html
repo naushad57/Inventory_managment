@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Company xyz</title>
+        <link href="../static/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <ul>
+            {% if 'name' not in session %}
+                <li><a href="{{url_for('login')}}">Login</a></li>
+            {% else %}
+            
+            <li><a href="{{url_for('allproducts')}}">Sales Record</a></li>
+            <li><a href="{{url_for('openinventory')}}">Purchase Record</a></li>
+            <li>Hello {{session['name']}}, <a href="{{url_for('logout')}}">Logout</a></li>
+            {% endif %}
+        </ul>
+        {% block content %}
+        
+        {% endblock %}
+        <footer>
+            <p>copyright &copy; 2021. all rights reserved.</p>
+        </footer>
+    </body>
+</html>

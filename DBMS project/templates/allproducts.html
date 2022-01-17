@@ -1,0 +1,49 @@
+{% extends "theme.html" %}
+{% block content %}
+        <form action="{{url_for('addproducts')}}" method="POST">
+             <label>DATE</label>
+             <input type="date" name="date"/><br><br>
+             <label>PRODUCT</label>
+             <input type="text" name="product"/><br><br>
+             <label>CUSTORMER NAME</label>
+             <input type="text" name="info"/><br><br>
+             <label>UNITS</label>
+             <input type="number" name="units"/><br><br>
+             <label>PRICE/UNIT</label>
+             <input type="number" name="unitcost"/><br><br>
+             <label>SALES</label>
+             <input type="number" name="cogfs"/><br><br>
+            <!--<label>SALES</label>-->
+             <!--<input type="number" name="cogs"/><br><br>-->            
+             <input type="submit" name="addnewproduct" value="ADD NEW PRODUCT"/>
+         </form>
+    <h3>SALES RECORD</h3>
+        <table border='1' width='900'>
+            <tr>
+                <th>DATE</th>
+                <th>PRODUCT</th>
+                <th>CUSTOMER NAME</th>
+                <th>UNITS</th>
+                <th>PRICE/UNIT</th>
+                <th>SALES</th>
+                <!--<th>SALES</th>-->
+                <th colspan="2">Action</th>
+            </tr>
+             {% for row in data %}
+                <tr align="center">
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                    <td>{{row[4]}}</td>
+                    <td>{{row[5]}}</td>
+                    <td>{{row[6]}}</td>
+                    <!--<td>{{row[7]}}</td>-->
+                    <td><a href="{{url_for('editproducts',id=row[0])}}">edit</a></td>
+                    <td><a href="{{url_for('dispatched',id=row[0])}}">remove</a></td>
+                </tr>
+            {% endfor %}
+            
+        </table>
+
+
+{% endblock %} 

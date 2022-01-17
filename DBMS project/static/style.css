@@ -1,0 +1,27 @@
+body{
+      background:#cccccc;   
+  }
+h3{
+    color:red;
+}
+
+ul{
+    list-style-type:none;
+}
+ul li{
+    display:inline-block;
+    width:200px;
+    text-align:center;
+    background:orange;
+}
+
+ul li a{    
+    color:#ffffff;
+}
+
+footer{
+   background:orange;
+   padding:10px 0;
+   text-align:center;
+   color:#ffffff;
+}

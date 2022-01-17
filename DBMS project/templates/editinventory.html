@@ -1,0 +1,21 @@
+{% extends "theme.html" %}
+{% block content %}
+         <form action="{{url_for('updateinventory')}}" method="POST">
+             <input type="hidden" name="uid" value="{{singuser[0]}}"/>
+             <label>DATE</label>
+             <input type="date" name="date" value="{{singuser[1]}}"/><br><br>
+             <label>PRODUCT</label>
+             <input type="text" name="product" value="{{singuser[2]}}"/><br><br>
+             <label>LOCATION</label>
+             <input type="text" name="info" value="{{singuser[3]}}"/><br><br>
+             <label>QTY</label>
+             <input type="number" name="units" value="{{singuser[4]}}"/><br><br>
+             <label>PRICE/UNIT</label>
+             <input type="number" name="unitcost" value="{{singuser[5]}}"/><br><br>
+             <label>INVENTORY</label>
+             <input type="number" name="cogfs" value="{{singuser[6]}}"/><br><br>
+             <!--<label>SALES</label>-->
+             <!--<input type="number" name="cogs" value="{{singuser[7]}}"/><br><br>-->
+             <input type="submit" name="updateproduct" value="Update"/>
+         </form>
+{% endblock %}
